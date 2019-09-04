@@ -1,0 +1,30 @@
+easy_admin:
+  design:
+    assets:
+
+      js:
+        # JS PATHS :
+        - bundles/fosjsrouting/js/router.min.js
+        - /js/routing?callback=fos.Router.setData
+        # JS TRANSLATIONS :
+        - bundles/bazingajstranslation/js/translator.min.js
+        - /translations/scripts
+        # JS EDITOR :
+        - lib/grapes/grapes.js
+        - js/editor/panels.js
+        - js/editor/commands.js
+        - js/editor/storage.js
+        - js/editor/assets.js
+        - js/editor/basic-blocks.js
+        - js/editor/extra-blocks.js
+        - js/editor/editor.js
+
+      css:
+        # CSS FLAGS (for translations) :
+        - lib/flag-icon-css/css/flag-icon.min.css
+        # CSS EDITOR :
+        - lib/grapes/css/grapes.min.css
+        - css/editor.css
+        # CSS ADMIN :
+        - css/root.css
+        - css/admin.css

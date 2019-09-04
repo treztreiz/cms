@@ -1,0 +1,10 @@
+<meta name="robots" {% if page.seo.indexed %}content="index, follow"{% else %}content="noindex, nofollow"{% endif %}>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="og:site_name" content="{{site_name}}">
+{% if page.seo.ogDescription %}
+	<meta name="description" content="{{page.seo.ogDescription}}">
+	<meta name="og:description" content="{{page.seo.ogDescription}}">
+{% endif %}
+{% if page.seo.ogTitle %}
+	<meta name="og:title" content="{{page.seo.ogTitle}}">
+{% endif %}

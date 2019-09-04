@@ -1,0 +1,17 @@
+{% block editor_storage_row %}
+	
+	<div class="form-group field-editor">
+
+		<div class="form-widget">
+			<div style="display:none;">
+				{{form_widget(form)}}
+				<input type="submit" onclick="return false;">
+			</div>
+			<a class="btn toggle-editor"><i class="fa fa-fw fa-edit"></i> Edit content</a>
+		</div>
+
+		{% include 'editor/editor.html.twig' %}
+
+	</div>
+
+{% endblock %}

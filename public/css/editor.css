@@ -1,0 +1,181 @@
+.gjs-one-bg{
+  background-color: var(--body-bg);
+}
+.gjs-two-color{
+  color:#222;
+}
+.gjs-block-category .gjs-caret-icon, .gjs-four-color,.gjs-four-color-h:hover{
+  color: var(--color-primary);
+}
+
+.gjs-block:hover{
+ color: #3b97e3;
+}
+
+.gjs-field-colorp{
+  border:0;
+}
+
+.gjs-block{
+  height: auto;
+  min-height: auto;
+  background: #333;
+  color: #fff;
+  border:0;
+  width:40%;
+}
+.gjs-blocks-c{
+  justify-content:center;
+}
+.gjs-field-checkbox input:checked+.gjs-chk-icon{
+  border-color:#000;
+}
+
+.gjs-pn-btn.gjs-pn-active{
+  background:#222;
+  color:#fff;
+}
+
+.gjs-pn-btn.btn-save{
+  background-color: var(--color-primary);
+  color: white;
+  padding: 4px 20px;  
+}
+
+.gjs-am-file-uploader{
+  float:initial;
+  display:inline-block;
+  width:49%;
+}
+.gjs-am-file-uploader form{
+  margin:0;
+  border-color: var(--color-primary);
+}
+.gjs-am-file-uploader #gjs-am-title{
+  padding:0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.gjs-am-assets-cont{
+  float:initial;
+  width: 49%;
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.gjs-am-add-asset{
+  border-radius: 3px
+}
+.gjs-am-add-asset button{
+  display: inline-block;
+  font-weight: 400;
+  color: #4c5367;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 0 solid transparent;
+  padding: 4px 10px;
+  font-size: .875rem;
+  line-height: 1.6;
+  border-radius: var(--border-radius);
+  transition: all .08s ease-in;
+  box-shadow: 0 0 0 1px rgba(43,45,80,.1), 0 2px 5px 0 rgba(43,45,80,.08), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#gjs {
+  border: 3px solid #444;
+}
+.gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title{
+  border-bottom:0;
+}
+
+.editor-row .blocks-container, .editor-row .styles-container, .editor-row .traits-container, .editor-row .layers-container{
+  border-radius:4px;
+  overflow: hidden;
+}
+
+.gjs-color-warn{
+  color: #222;
+}
+
+.gjs-cv-canvas {
+  top: 0;
+  width: 100%;
+  height: 100%;
+} 
+
+.editor-wrapper{
+  display: none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:9999;
+}
+
+.panel__top {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  position: initial;
+  justify-content: center;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+
+.traits-container{
+  margin-bottom: 5px;
+}
+
+fieldset .form-group .gjs-radio-items label {
+  font-size:12px;
+  text-align: center;
+}
+
+.gjs-editor-cont .sp-container button, .gjs-editor-cont .sp-container button:hover, .gjs-editor-cont .sp-container button:active{
+  border: 0;
+  background: #222;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.gjs-sm-sector .gjs-sm-field input, .gjs-clm-tags .gjs-sm-field input, .gjs-sm-sector .gjs-clm-field input, .gjs-clm-tags .gjs-clm-field input, .gjs-clm-tags .gjs-sm-field select, .gjs-sm-sector .gjs-clm-field select, .gjs-clm-tags .gjs-clm-field select{
+  color: #000;
+}
+
+.gjs-editor-cont .sp-cancel, .gjs-editor-cont .sp-cancel:hover{
+  top: -11px;
+  font-size: 35px;
+  bottom: initial;
+}
+
+.panel__basic-actions, .panel__switcher, .panel__devices {
+  position: initial;
+  background:none;
+}
+
+.editor-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  height: calc(100vh - 40px);
+}
+
+.editor-canvas {
+  flex-grow: 1;
+}
+
+.panel__right {
+  flex-basis: 230px;
+  position: relative;
+  overflow-y: auto;
+  background: #444;
+}

@@ -1,0 +1,138 @@
+#header-logo img{
+	max-height: 40px;
+    margin-top: -10px;
+}
+
+.sidebar-menu .header{
+  margin-top:0;
+}
+
+.login-wrapper #header-logo img{
+  max-height: 60px;
+  margin-top: 0px;
+}
+
+.pageType > .form-group > .col-form-label{
+	display:none;
+}
+
+.pageType .form-widget{
+	flex: 0 0 100%;
+}
+
+.pageType .form-widget .form-widget{
+	flex: 0 0 55%;
+}
+
+.map-form textarea, .map-form textarea:focus {
+	height: 200px!important;
+    background: #232d33;
+    color: white;
+}
+
+.datagrid td.image{
+	text-align: left;
+}
+
+.field-editor .form-widget .btn{
+	background: var(--color-primary);
+	color:white;
+	padding: 7px 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+}
+.field-editor .form-widget .btn:hover{
+	color:white;
+}
+
+.editor-css{
+  display:none;
+}
+
+.field-seo > legend{
+	display: none;
+}
+
+.a2lix_translationsLocales.nav-tabs{
+	background: var(--fieldset-bg);
+}
+
+.field-a2lix_translations{
+  display: block;
+}
+
+.field-a2lix_translations > legend{
+	display: none;
+}
+
+.field-a2lix_translations > .form-widget{
+	padding: 0;
+}
+
+.field-a2lix_translations .form-widget-compound .form-group{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.field-a2lix_translations .form-widget-compound .form-group .form-widget{
+  align-items: flex-start;
+  flex: 0 0 55%;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.tab-content>.tab-pane-translation {
+    display: none;
+}
+.tab-content>.tab-pane-translation.active {
+    display: block;
+}
+
+
+.flight-segments .field-collection{
+  display: block;
+}
+
+.flight-segments .field-collection > legend {
+  display: none;
+}
+
+.flight-segments .field-segment{
+  border: 1px solid var(--border-color);
+  padding: 0;
+  border-radius: 3px;
+}
+
+.flight-segments .field-collection .form-widget-compound .form-group{
+  display: inline-block;
+  padding: 0 20px;
+  border-left: 1px solid var(--border-color);
+}
+
+.flight-segments .field-collection .form-widget-compound .form-group .form-widget .form-widget{
+  padding-bottom: 10px;
+}
+
+.flight-segments .field-collection .form-widget-compound .field-segment{
+  width:100%;
+  text-align: center;
+}
+
+.flight-segments .field-collection legend,
+.flight-segments .field-collection label{
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.flight-segments .field-collection-item-row{
+  display: table;
+  width:100%;
+}
+
+.flight-segments .field-collection-item-row > div{
+  display: table-cell;
+  vertical-align: middle;
+}

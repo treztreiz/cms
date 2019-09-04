@@ -1,0 +1,86 @@
+cms:
+  edit: 'Edit'
+
+  wrapper: 'Fullwith column'
+  column: 'Column'
+  fullwidth_container: 'Fullwidth container'
+  fullwidth_column: 'Fullwidth 2 columns'
+  shadow: 'Shadow'
+  depth: 'Depth'
+  none: 'None'
+  text: 'Text'
+  edit_this_text: 'Edit this text'
+  lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere quam ac ipsum pellentesque, fringilla egestas tortor varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas semper hendrerit arcu. Vivamus semper purus id sem consectetur, sed euismod lectus tristique. Suspendisse potenti. Ut lacinia, enim in venenatis sodales, ante turpis rhoncus tortor, dignissim sodales odio sem sed lectus. Sed sed euismod libero.'
+  title: 'Title'
+  edit_this_title: 'Edit this title'
+  heading: 'Heading'
+  line_behind: 'Line behind'
+
+  headline: 'Headline'
+  discover: 'Discover'
+  beautiful_resort: 'A beautiful resort'
+
+  icon: 'Icon'
+  position: 'Position'
+
+  auto: 'Auto'
+  left: 'Left'
+  right: 'Right'
+
+  size: 'Size'
+
+  link: 'Link'
+  edit_this_link: 'Edit this link'
+  external: 'External'
+  page: 'Page'
+
+  button: 'Button'
+  type: 'Type'
+  button_light: 'Button light'
+  button_transparent: 'Button transparent'
+  disabled: 'Disabled'
+
+  flights_map: 'Flights map'
+  spots_map: 'Spots map'
+  reviews: 'Reviews'
+  call_to_action: 'Call to action'
+  some_link_here: 'Some link here'
+
+  spacer: 'Spacer'
+  divider: 'Divider'
+
+  text_icon: 'Text with icon'
+  link_icon: 'Link with icon'
+
+  list_element: 'List element'
+  list: 'List'
+
+  image: 'Image'
+  background_image: 'Background image'
+
+  parallax_inner_section: 'Parallax inner section'
+  parallax: 'Parallax'
+  parallax_container: 'Parallax Container'
+  parallax_image_wrapper: 'Parallax image wrapper'
+  parallax_image: 'Parallax image'
+
+  gallery: 'Gallery'
+  gallery_item: 'Gallery item'
+  gallery_image: 'Gallery image'
+
+  video: 'Video'
+  video_container: 'Video container'
+
+  booking_btn: 'Booking button'
+  booking_request: 'Booking request'
+
+  faq: 'FAQ'
+  write_question: 'Write a question'
+
+  packages_table: 'Packages table'
+  a_la_carte_table: 'A la carte table'
+  equipment_table: 'Equipment table'
+
+  print_btn: 'PDF button'
+
+  overlay: 'Overlay'

@@ -1,0 +1,40 @@
+easy_admin:
+  entities:
+    Page:
+
+      class: App\Entity\Page
+      label: Page
+
+      form:
+        fields:
+
+          - { type: 'tab' , label: 'Content' }
+          - { type: 'group', columns: 8, label: 'Page content', icon: 'clone' }
+          - { property: 'translations', type: A2lix\TranslationFormBundle\Form\Type\TranslationsType,
+              type_options: {
+                required: true,
+                fields: {
+                  storage: { field_type: App\Form\EditorStorageType, required: false }
+                },
+                excluded_fields: [ html, slug ]
+              } 
+            }
+          - { property: css, css_class: 'editor-css' }
+          - { type: 'group', columns: 4, label: 'Banner', icon: 'image' }
+          - { property: image, type: App\Form\ImageType }
+
+          - { type: 'tab' , label: 'Configuration' }
+          - { type: 'group', columns: 8, label: 'Seo', icon: 'clone' }
+          - { property: seo, type: App\Form\SeoType }
+          - { type: 'group', columns: 4, label: 'Options', icon: 'cog' }
+          - frontpage
+
+      list:
+        title: '<i class="fa fa-fw fa-clone"></i>  Pages'
+        fields: 
+          - { property: translate.title, label: Title }
+          - { property: image.imageName, type: 'image', label: 'Banner', base_path: '%app_path.images%' }
+          - { property: seo.indexed, type: toggle, label: 'Indexed' }
+          - { property: frontpage, type: 'boolean' }
+          - { property: author.modifiedAt, label: 'Modified', type: 'date', format: 'd/m/Y' }
+          - { property: author.modifiedBy, label: 'By' }

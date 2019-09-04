@@ -1,0 +1,15 @@
+easy_admin:
+
+  site_name: '%site_name%'
+
+  list:
+    batch_actions: ['delete']
+
+  design:
+    templates:
+      layout: 'admin/layout.html.twig'
+
+    menu:
+      - { label: 'General' }
+      - { label: Dashboard, icon: tasks, route: admin.dashboard, default: true }
+      - { entity: Page, label: Pages, icon: clone }

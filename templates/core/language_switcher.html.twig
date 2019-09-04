@@ -1,0 +1,20 @@
+{% set route = app.request.attributes.get('_route') %}
+{% set route_params = app.request.attributes.get('_route_params') %}
+{% set params = route_params|merge(app.request.query.all) %}
+
+{% for locale in locales if locale != app.request.locale %}
+
+    <li class="language-switcher">
+        <a
+        {% if page is defined %}
+        	{% if page.frontpage %}
+        		href="{{ path('frontpage', { _locale: locale }) }}"
+        	{% else %}
+        		href="{{ path('page.by_id', { _locale: locale, id: page.id, slug: page.slug }) }}"
+        	{% endif %}
+        {% else %}
+        	href="{{ path(route, params|merge({ _locale: locale })) }}"
+        {% endif %}> {{locale|upper}}</a>
+    </li>
+
+{% endfor %}

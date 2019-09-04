@@ -1,0 +1,3 @@
+page_controller:
+    resource: ../../src/Controller/PageController.php
+    type: annotation

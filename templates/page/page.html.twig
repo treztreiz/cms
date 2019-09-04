@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{page.title}}{% endblock %}
+
+{% block stylesheets %}
+	<style type="text/css">{{page.css|raw}}</style>
+{% endblock %}
+
+{% block body %}
+
+	{% include 'page/navbar.html.twig' %}
+	{% include 'page/banner.html.twig' %}
+
+	<section id="page">
+		{{ include(template_from_string(page.translate.html)) }}
+	</section>
+
+	{% include 'page/footer.html.twig' %}
+
+{% endblock %}

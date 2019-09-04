@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
+    <head>
+
+       	<meta charset="UTF-8" lang="{{ app.request.getLocale() }}">
+       	<title>{{site_name}}{% if page is defined and not page.frontpage %} | {% block title %}{% endblock %}{% endif %}</title>
+       
+       	{# SEO #}
+    	{% if page is defined %}
+	        {% include 'page/seo.html.twig' %}  
+	    {% endif %}
+
+	    {# STYLES #}
+	    <!-- MATERIALIZE -->
+	    <link rel="stylesheet" href="{{asset('lib/materialize/css/materialize.min.css')}}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- MAIN -->
+        <link rel="stylesheet" href="{{asset('css/root.css')}}">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+       	{% block stylesheets %}{% endblock %}
+
+        {% include 'core/event_loader.html.twig' %}
+
+    </head>
+    <body>
+
+        {% include 'core/language_switcher.html.twig' %}
+        {% block body %}{% endblock %}
+        	
+        <!-- JS ROUTING -->
+        <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+        <!-- JQUERY -->
+        <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
+        <!-- MATERIALIZE -->
+        <script src="{{asset('lib/materialize/js/materialize.min.js')}}"></script>
+        <!-- MAIN -->
+        <script src="{{ asset('js/main.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,5 @@
+easy_admin:
+  design:
+    form_theme:
+      - form/form.html.twig
+      - form/editor_field.html.twig
