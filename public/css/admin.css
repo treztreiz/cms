@@ -136,3 +136,7 @@
   display: table-cell;
   vertical-align: middle;
 }
+
+.avatar-circle{
+  border-radius:50%;
+}

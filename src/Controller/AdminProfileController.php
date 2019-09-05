@@ -34,12 +34,13 @@ class AdminProfileController  extends BaseAdminController
     {   
         $user = $this->getUser();
         $form = $this->createForm(AdminProfileType::class, $user);
-        $form->handleRequest($request);
+        $form->handleRequest($request);  
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin.profile');
+            /*return $this->redirectToRoute('admin.profile');*/
+            
         }
 
         return $this->render('admin/profile/edit.html.twig', [

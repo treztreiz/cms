@@ -10,9 +10,17 @@
                 <th>Email</th>
                 <td>{{ user.email }}</td>
             </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img class="avatar-circle" src ="{{ vich_uploader_asset( user.image, 'imageFile') | imagine_filter('profile_show') }}"></td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('admin.profile.edit') }}">edit</a>
+    <a class="btn" href="{{ path('admin.profile.edit') }}">edit</a>
 
 {% endblock %}
