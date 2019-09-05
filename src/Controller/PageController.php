@@ -14,7 +14,7 @@ class PageController extends AbstractController
 {   
 
     /**
-     * @Route("/", name="frontpage", methods={"GET"})
+     * @Route("/", name="frontpage")
      */
     public function frontpage(PageRepository $pageRepository)
     {

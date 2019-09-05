@@ -38,6 +38,11 @@ class User implements UserInterface
      */
     private $username;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $locale = 'en';
+
     public function getId(): ?int
     {
         return $this->id;
@@ -126,5 +131,17 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->username;
+    }
+
+    public function getLocale(): ?string
+    {
+        return $this->locale;
+    }
+
+    public function setLocale(string $locale): self
+    {
+        $this->locale = $locale;
+
+        return $this;
     }
 }
