@@ -39,7 +39,7 @@ class AdminProfileController  extends BaseAdminController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            /*return $this->redirectToRoute('admin.profile');*/
+            return $this->redirectToRoute('admin.profile');
             
         }
 

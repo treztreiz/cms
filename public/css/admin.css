@@ -139,4 +139,43 @@
 
 .avatar-circle{
   border-radius:50%;
+  width: 100%;
+  font-size: 10vw;
+  max-width: 150px;
+}
+
+.custom-form label, .custom-form .form-group legend.col-form-label{
+  text-align: initial;
+}
+
+.custom-form .form-check-input{
+  position: initial;
+  margin-top: initial;
+  margin-left: initial;
+}
+
+.custom-form .easyadmin-thumbnail{
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  max-width: 150px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.custom-form .easyadmin-thumbnail:after{
+  content:'';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.custom-form .easyadmin-thumbnail img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin:0;
 }

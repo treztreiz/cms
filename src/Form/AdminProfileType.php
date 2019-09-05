@@ -16,6 +16,8 @@ class AdminProfileType extends AbstractType
         $builder
             ->add('username')
             ->add('email')
+            ->add('firstname')
+            ->add('lastname')
             ->add('image', ImageType::class)
         ;
     }
