@@ -19,3 +19,13 @@ liip_imagine:
         quality: 75
         filters:
           thumbnail: { size: [1600,1200], mode: outbound }
+
+      profile:
+        quality: 75
+        filters:
+          thumbnail: { size: [21,21], mode: outbound }
+
+      profile_show:
+        quality: 75
+        filters:
+          thumbnail: { size: [150,150], mode: outbound }

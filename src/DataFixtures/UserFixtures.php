@@ -21,13 +21,15 @@ class UserFixtures extends Fixture
     {
         $admin = new User();
 
-        $admin->setEmail('admin@admin.com');
-        $admin->setUsername('admin');
-        $admin->setPassword($this->passwordEncoder->encodePassword(
+        $admin->setEmail('admin@admin.com')
+        ->setFirstname('ADMIN')
+        ->setLastname('admin')
+        ->setUsername('admin')
+        ->setPassword($this->passwordEncoder->encodePassword(
         	$admin,
         	'123456'
-        ));
-        $admin->setRoles(['ROLE_SUPER_ADMIN']);
+        ))
+        ->setRoles(['ROLE_SUPER_ADMIN']);
 
         $manager->persist($admin);
         $manager->flush();

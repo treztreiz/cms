@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use App\Form\ImageType;
+
 class AdminProfileType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -14,6 +16,9 @@ class AdminProfileType extends AbstractType
         $builder
             ->add('username')
             ->add('email')
+            ->add('firstname')
+            ->add('lastname')
+            ->add('image', ImageType::class)
         ;
     }
 

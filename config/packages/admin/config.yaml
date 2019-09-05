@@ -2,6 +2,9 @@ easy_admin:
 
   site_name: '%site_name%'
 
+  user:
+      avatar_property_path: 'image'
+
   list:
     batch_actions: ['delete']
 
