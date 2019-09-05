@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
  * @Vich\Uploadable
  */
-class Image
+class Image implements \Serializable
 {
     /**
      * @ORM\Id()
@@ -100,6 +100,19 @@ class Image
         }
 
         return $this;
+    }
+
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->imageName
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        list( $this->id, ) = unserialize( $serialized );
     }
 
 }
