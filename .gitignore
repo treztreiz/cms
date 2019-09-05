@@ -20,5 +20,5 @@
 
 ###> liip/imagine-bundle ###
 /public/media/cache/
-/public/upload
+/public/upload/
 ###< liip/imagine-bundle ###
