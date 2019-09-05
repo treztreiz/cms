@@ -10,9 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\AdminProfileType;
 
-
 /**
- * @Route("/admin")
+ * @Route("/admin", options={ "i18n": false })
  */
 class AdminProfileController  extends BaseAdminController
 {

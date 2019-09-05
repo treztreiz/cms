@@ -19,6 +19,7 @@ class AdminProfileType extends AbstractType
             ->add('firstname')
             ->add('lastname')
             ->add('image', ImageType::class)
+            ->add('locale')
         ;
     }
 

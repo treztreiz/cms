@@ -178,5 +178,6 @@ class User implements UserInterface
     public function setLocale(string $locale): self
     {
         $this->locale = $locale;
+        return $this;
     }
 }

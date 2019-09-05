@@ -6,7 +6,7 @@
 parameters:
     site_name: 'SITENAME'
     locale: 'en'
-    locales: [ '%locale%' ]
+    locales: [ '%locale%', 'fr' ]
     app_path.images: /upload/img
 
 services:
@@ -30,6 +30,3 @@ services:
     App\Listener\ImageUploadListener:
         tags:
             - { name: kernel.event_listener, event: vich_uploader.pre_remove }
-
-
-

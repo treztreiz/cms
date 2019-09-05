@@ -32,6 +32,7 @@ class PageController extends AbstractController
     public function page(Request $request, PageRepository $pageRepository, $slug)
     {   
         $page = $pageRepository->getPage($slug, $request->getLocale() );
+        dump($request->getLocale());
         if( null == $page ) throw new NotFoundHttpException();
         elseif( $page->getFrontpage() ) return $this->redirectToRoute('frontpage', [], 301);
 
@@ -46,7 +47,7 @@ class PageController extends AbstractController
     public function pageById(Page $page)
     {   
         if( null == $page ) throw new NotFoundHttpException();
-
+        
         return $this->redirectToRoute('page',[
             'slug' => $page->getSlug()
         ], 301);
