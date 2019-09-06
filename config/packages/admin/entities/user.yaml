@@ -11,8 +11,9 @@ easy_admin:
           - 'firstname'
           - 'lastname'
           - 'username'
+          - { property: 'password', type: password }
           - { property: image, type: App\Form\ImageType }
-          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true, choices: { 'ROLE_SUPER_ADMIN': 'Super-Admin', 'ROLE_ADMIN': 'Admin' } } }
+          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true } }
 
       list:
         title: '<i class="fa fa-fw fa-user"></i>  Users'
