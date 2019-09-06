@@ -6,10 +6,11 @@ use AlterPHP\EasyAdminExtensionBundle\Controller\EasyAdminController as BaseAdmi
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 use App\Entity\Page;
 use App\Entity\Image;
-
 
 class AdminController extends BaseAdminController
 {      
@@ -24,10 +25,9 @@ class AdminController extends BaseAdminController
     /**
      * @Route("/asset/upload", name="admin.asset_upload", options={ "expose": true })
      */
-    public function assetUpload(Request $request)
+    public function assetUpload(Request $request, ValidatorInterface $validator, UploaderHelper $helper)
     {   
         $em = $this->getDoctrine()->getManager();
-        $validator = $this->get('validator');
 
         $assets = [];
         $errors = [];
@@ -65,7 +65,7 @@ class AdminController extends BaseAdminController
 
         $response = [ "assets" => [], "errors" => $errors ];
         foreach($assets as $asset){
-            $response["assets"][] = $this->get('vich_uploader.templating.helper.uploader_helper')->asset($asset, 'imageFile');
+            $response["assets"][] = $helper->asset($asset, 'imageFile');
         }
 
         return new JsonResponse($response);
