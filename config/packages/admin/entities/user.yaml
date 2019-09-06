@@ -4,7 +4,6 @@ easy_admin:
 
       class: App\Entity\User
       controller: App\Controller\Admin\UserController
-      role: ROLE_SUPER_ADMIN
       label: User
 
       form:
@@ -15,12 +14,11 @@ easy_admin:
           - 'username'
           - { property: 'password', type: password }
           - { property: image, type: App\Form\ImageType }
-          - { property: 'role', type: 'choice', type_options: { choices: { 'Admin': 'ROLE_ADMIN', 'Super Admin': 'ROLE_SUPER_ADMIN' }, required: true } }
+          - { property: 'role', type: App\Form\RoleType, type_options: { required: true, roles : '%security.role_hierarchy.roles%' } }
 
       list:
         title: '<i class="fa fa-fw fa-user"></i>  Users'
         fields:
-          # - { property: 'roles', label: 'Role' } 
           - { property: 'email', label: 'Email' }
           - { property: 'username', label: 'Username' }
           - { property: 'firstname', label: 'Firstname' }
