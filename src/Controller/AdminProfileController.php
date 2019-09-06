@@ -40,6 +40,12 @@ class AdminProfileController  extends BaseAdminController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $this->getDoctrine()->getManager()->flush();
+
+            //Update session to automatically switch admin locale
+            if (null !== $user->getLocale()) {
+                $request->getSession()->set('_locale', $user->getLocale());
+            }
+
             return $this->redirectToRoute('admin.profile');
             
         }
