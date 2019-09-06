@@ -35,6 +35,30 @@ class UserController extends AdminController
         return parent::editAction();
     }
 
+    protected function listAction()
+    {   
+        $user = $this->getUser(); $roles = [];
+        $allRoles = $this->getParameter('security.role_hierarchy.roles');
+        foreach($allRoles as $role => $subroles){
+            if($this->isGranted($role)) $isGranted = true;
+            else{
+                $token = new UsernamePasswordToken($user, 'none', 'none', [ $role ] );
+                $this->decisionManager->decide($token, [ $user->getRole() ]) ? $isGranted = false : $isGranted = true;
+            }
+            if($isGranted) $roles[] = $role;
+        }
+
+        $filter = "entity.id != " . $user->getId() . " AND";
+        for($i=0;$i<count($roles);$i++){
+            $i == 0 ? $filter .= " (" : $filter .= " OR";
+            $filter .= " entity.roles LIKE '%" . $roles[$i] . "%'";
+            if( $i == count($roles) - 1 ) $filter .= ")";
+        }
+
+        $this->entity['list']['dql_filter'] = $filter;
+        return parent::listAction();
+    }
+
     public function persistEntity($entity)
     {
         $this->encodePassword($entity);
