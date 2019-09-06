@@ -9,14 +9,12 @@ parameters:
     locale: 'en'
     locales: [ '%locale%', 'fr' ]
     #ADMIN
-    admin_locales: 
-        en: 'English'
-        fr: 'Français'
     admin_email: 'admin@admin.com'
-    admin_firstname: 'admin'
-    admin_lastname: 'admin'
     admin_username: 'admin'
     admin_password: '123456'
+    admin_locales:
+        en: 'English'
+        fr: 'Français'
     #PATHS
     app_path.images: /upload/img
 
