@@ -3,6 +3,7 @@ easy_admin:
     User:
 
       class: App\Entity\User
+      controller: App\Controller\UserController
       label: User
 
       form:
@@ -13,7 +14,7 @@ easy_admin:
           - 'username'
           - { property: 'password', type: password }
           - { property: image, type: App\Form\ImageType }
-          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true } }
+          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true, choices: { 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' } } }
 
       list:
         title: '<i class="fa fa-fw fa-user"></i>  Users'
