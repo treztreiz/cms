@@ -5,6 +5,9 @@
     "a2lix/translation-form-bundle": {
         "version": "3.0.4"
     },
+    "alterphp/easyadmin-extension-bundle": {
+        "version": "v2.1.1"
+    },
     "behat/transliterator": {
         "version": "v1.2.0"
     },

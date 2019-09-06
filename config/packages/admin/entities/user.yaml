@@ -4,6 +4,7 @@ easy_admin:
 
       class: App\Entity\User
       controller: App\Controller\UserController
+      role: ROLE_SUPER_ADMIN
       label: User
 
       form:
