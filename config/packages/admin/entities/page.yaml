@@ -38,3 +38,5 @@ easy_admin:
           - { property: frontpage, type: 'boolean' }
           - { property: author.modifiedAt, label: 'Modified', type: 'date', format: 'd/m/Y' }
           - { property: author.modifiedBy, label: 'By' }
+        actions: 
+          - { name: 'showPage' }

@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use AlterPHP\EasyAdminExtensionBundle\Controller\EasyAdminController as BaseAdminController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use App\Entity\Page;
@@ -14,7 +15,7 @@ use App\Entity\Image;
  * @Route("/admin")
  */
 class AdminController extends BaseAdminController
-{   
+{      
     /**
      * @Route("/dashboard", name="admin.dashboard")
      */
@@ -91,8 +92,19 @@ class AdminController extends BaseAdminController
             ];
         }
 
-        return new JsonResponse($response);
+        return new JsonResponse();
     }
 
+    public function showPageAction()
+    {   
+        $id = $this->request->query->get('id');
+        $page = $this->em->getRepository(Page::class)->find($id);
+        
+        if( null == $page ) throw new NotFoundHttpException();
+        
+        return $this->redirectToRoute('page',[
+            'slug' => $page->getSlug()
+        ]);
+    }
     
 }
