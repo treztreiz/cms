@@ -12,7 +12,7 @@ easy_admin:
           - 'lastname'
           - 'username'
           - { property: image, type: App\Form\ImageType }
-          # - 'roles'
+          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true, choices: { 'ROLE_SUPER_ADMIN': 'Super-Admin', 'ROLE_ADMIN': 'Admin' } } }
 
       #     - { type: 'tab' , label: 'Content' }
       #     - { type: 'group', columns: 8, label: 'Page content', icon: 'clone' }
