@@ -14,7 +14,7 @@ easy_admin:
           - 'username'
           - { property: 'password', type: password }
           - { property: image, type: App\Form\ImageType }
-          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true, choices: { 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' } } }
+          - { property: 'role', type: 'choice', type_options: { choices: { 'Admin': 'ROLE_ADMIN', 'Super Admin': 'ROLE_SUPER_ADMIN' }, required: true } }
 
       list:
         title: '<i class="fa fa-fw fa-user"></i>  Users'
@@ -24,4 +24,5 @@ easy_admin:
           - { property: 'username', label: 'Username' }
           - { property: 'firstname', label: 'Firstname' }
           - { property: 'lastname', label: 'Lastname' }
+          - { property: 'role', label: 'Role' }
           - { property: 'image.imageName', label: 'Avatar', type: 'image', base_path: '%app_path.images%' }
