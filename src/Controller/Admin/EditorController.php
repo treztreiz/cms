@@ -72,7 +72,6 @@ class EditorController extends AbstractController
         $pages = $em->getRepository(Page::class)->findAll();
 
         $response[] = [ "value" => "none", "name" => "None" ];
-
         foreach($pages as $page){
             $response[] = [ 
                 "value" => "{{path('page.by_id',{ id : " . $page->getId() . ", slug : '" . $page->getSlug() . "' })}}",
