@@ -10,7 +10,7 @@ use App\Entity\User;
 use App\Form\AdminProfileType;
 
 /**
- * @Route("/admin/profile")
+ * @Route("/profile")
  */
 class ProfileController extends AdminController
 {
