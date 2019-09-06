@@ -19,7 +19,7 @@ class AdminController extends BaseAdminController
      * @Route("/dashboard", name="admin.dashboard")
      */
     public function dashboard()
-    {
+    {   
         return $this->render('admin/dashboard.html.twig');
     }
 
