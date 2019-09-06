@@ -1,0 +1,25 @@
+easy_admin:
+  entities:
+    User:
+
+      class: App\Entity\User
+      label: User
+
+      form:
+        fields:
+          - 'email'
+          - 'firstname'
+          - 'lastname'
+          - 'username'
+          - { property: image, type: App\Form\ImageType }
+          - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true, choices: { 'ROLE_SUPER_ADMIN': 'Super-Admin', 'ROLE_ADMIN': 'Admin' } } }
+
+      list:
+        title: '<i class="fa fa-fw fa-user"></i>  Users'
+        fields:
+          # - { property: 'roles', label: 'Role' } 
+          - { property: 'email', label: 'Email' }
+          - { property: 'username', label: 'Username' }
+          - { property: 'firstname', label: 'Firstname' }
+          - { property: 'lastname', label: 'Lastname' }
+          - { property: 'image.imageName', label: 'Avatar', type: 'image', base_path: '%app_path.images%' }

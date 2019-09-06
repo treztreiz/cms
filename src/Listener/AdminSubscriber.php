@@ -19,8 +19,8 @@ class AdminSubscriber implements EventSubscriberInterface
 	public static function getSubscribedEvents()
     {	    	
         return array(
-            'easy_admin.pre_persist' => ['updateAuthor'],
-            'easy_admin.pre_update' => ['updateAuthor'],
+            'easy_admin.pre_persist' => ['updateAuthor', 'updateUserPassword'],
+            'easy_admin.pre_update' => ['updateAuthor', 'updateUserPassword'],
         );
     }
 
@@ -42,5 +42,14 @@ class AdminSubscriber implements EventSubscriberInterface
 
     	$event['entity'] = $entity;
 
+    }
+
+    public function updateUserPassword(GenericEvent $event){
+
+        $entity = $event->getSubject();
+        
+        if(!($entity instanceof User)) return;
+        
+        throw new Exception("Error Processing Request", 1);
     }
 }
