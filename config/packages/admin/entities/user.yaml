@@ -1,0 +1,46 @@
+easy_admin:
+  entities:
+    User:
+
+      class: App\Entity\User
+      label: User
+
+      form:
+        fields:
+          - 'email'
+          - 'firstname'
+          - 'lastname'
+          - 'username'
+          - { property: image, type: App\Form\ImageType }
+          # - 'roles'
+
+      #     - { type: 'tab' , label: 'Content' }
+      #     - { type: 'group', columns: 8, label: 'Page content', icon: 'clone' }
+      #     - { property: 'translations', type: A2lix\TranslationFormBundle\Form\Type\TranslationsType,
+      #         type_options: {
+      #           required: true,
+      #           fields: {
+      #             storage: { field_type: App\Form\EditorStorageType, required: false }
+      #           },
+      #           excluded_fields: [ html, slug ]
+      #         } 
+      #       }
+      #     - { property: css, css_class: 'editor-css' }
+      #     - { type: 'group', columns: 4, label: 'Banner', icon: 'image' }
+      #     - { property: image, type: App\Form\ImageType }
+
+      #     - { type: 'tab' , label: 'Configuration' }
+      #     - { type: 'group', columns: 8, label: 'Seo', icon: 'clone' }
+      #     - { property: seo, type: App\Form\SeoType }
+      #     - { type: 'group', columns: 4, label: 'Options', icon: 'cog' }
+      #     - frontpage
+
+      list:
+        title: '<i class="fa fa-fw fa-user"></i>  Users'
+        fields:
+          # - { property: 'roles', label: 'Role' } 
+          - { property: 'email', label: 'Email' }
+          - { property: 'username', label: 'Username' }
+          - { property: 'firstname', label: 'Firstname' }
+          - { property: 'lastname', label: 'Lastname' }
+          - { property: 'image.imageName', label: 'Avatar', type: 'image', base_path: '%app_path.images%' }
