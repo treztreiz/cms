@@ -22,7 +22,7 @@ class Seo
     /**
      * @ORM\Column(type="boolean")
      */
-    private $indexed;
+    private $indexed = false;
 
     public function getId(): ?int
     {
