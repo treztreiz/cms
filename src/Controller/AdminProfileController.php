@@ -10,9 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\AdminProfileType;
 
-
 /**
- * @Route("/admin")
+ * @Route("/admin", options={ "i18n": false })
  */
 class AdminProfileController  extends BaseAdminController
 {
@@ -33,11 +32,19 @@ class AdminProfileController  extends BaseAdminController
     public function edit(Request $request): Response
     {   
         $user = $this->getUser();
-        $form = $this->createForm(AdminProfileType::class, $user);
-        $form->handleRequest($request);  
 
+        $form = $this->createForm(AdminProfileType::class, $user, [
+            'adminLocales' => $this->getParameter('admin_locales')
+        ]);
+        $form->handleRequest($request);  
         if ($form->isSubmitted() && $form->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
+
+            //Update session to automatically switch admin locale
+            if (null !== $user->getLocale()) {
+                $request->getSession()->set('_locale', $user->getLocale());
+            }
 
             return $this->redirectToRoute('admin.profile');
             

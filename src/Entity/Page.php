@@ -79,7 +79,6 @@ class Page
     }
 
     /* TRANSLATE FUNCTIONS */
-
     public function getTitle() {
         return $this->translate()->getTitle();
     }
