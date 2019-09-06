@@ -12,6 +12,9 @@ use App\Entity\Image;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
+/**
+ * @Route("/editor")
+ */
 class EditorController extends AbstractController
 {      
     /**
