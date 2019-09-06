@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use AlterPHP\EasyAdminExtensionBundle\Controller\EasyAdminController as BaseAdminController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use App\Entity\Page;
@@ -80,7 +79,6 @@ class AdminController extends BaseAdminController
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository(Page::class)->findAll();
 
-        $response = [];
         $response[] = [ "value" => "none", "name" => "None" ];
 
         foreach($pages as $page){
@@ -90,7 +88,7 @@ class AdminController extends BaseAdminController
             ];
         }
 
-        return new JsonResponse();
+        return new JsonResponse($response);
     }
 
     public function showPageAction()
