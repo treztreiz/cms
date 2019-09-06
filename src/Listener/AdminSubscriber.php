@@ -6,7 +6,6 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\Security\Core\Security;
 use App\Entity\Author;
 use App\Entity\Page;
-use App\Entity\User;
 
 class AdminSubscriber implements EventSubscriberInterface
 {	

@@ -14,27 +14,6 @@ easy_admin:
           - { property: image, type: App\Form\ImageType }
           - { property: 'roles', type: 'choice', type_options: { expanded: true, multiple: true, choices: { 'ROLE_SUPER_ADMIN': 'Super-Admin', 'ROLE_ADMIN': 'Admin' } } }
 
-      #     - { type: 'tab' , label: 'Content' }
-      #     - { type: 'group', columns: 8, label: 'Page content', icon: 'clone' }
-      #     - { property: 'translations', type: A2lix\TranslationFormBundle\Form\Type\TranslationsType,
-      #         type_options: {
-      #           required: true,
-      #           fields: {
-      #             storage: { field_type: App\Form\EditorStorageType, required: false }
-      #           },
-      #           excluded_fields: [ html, slug ]
-      #         } 
-      #       }
-      #     - { property: css, css_class: 'editor-css' }
-      #     - { type: 'group', columns: 4, label: 'Banner', icon: 'image' }
-      #     - { property: image, type: App\Form\ImageType }
-
-      #     - { type: 'tab' , label: 'Configuration' }
-      #     - { type: 'group', columns: 8, label: 'Seo', icon: 'clone' }
-      #     - { property: seo, type: App\Form\SeoType }
-      #     - { type: 'group', columns: 4, label: 'Options', icon: 'cog' }
-      #     - frontpage
-
       list:
         title: '<i class="fa fa-fw fa-user"></i>  Users'
         fields:
