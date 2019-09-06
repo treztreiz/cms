@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Page;
 use App\Entity\Image;
 
-/**
- * @Route("/admin")
- */
+
 class AdminController extends BaseAdminController
 {   
     /**

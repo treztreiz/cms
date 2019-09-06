@@ -1,8 +1,11 @@
 security:
 
     role_hierarchy:
+        ROLE_CUSTOMER:    ROLE_USER
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_ADMIN_CAMBODGE: ROLE_ADMIN
+        ROLE_ADMIN_TOKYO: ROLE_ADMIN
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN_CAMBODGE, ROLE_ADMIN_TOKYO  ]
 
     encoders:
         App\Entity\User:
