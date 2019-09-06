@@ -7,6 +7,9 @@ parameters:
     site_name: 'SITENAME'
     locale: 'en'
     locales: [ '%locale%', 'fr' ]
+    admin_locales: 
+        en: 'English'
+        fr: 'Français'
     app_path.images: /upload/img
 
 services:

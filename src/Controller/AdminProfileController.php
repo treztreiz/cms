@@ -32,12 +32,14 @@ class AdminProfileController  extends BaseAdminController
     public function edit(Request $request): Response
     {   
         $user = $this->getUser();
-        $form = $this->createForm(AdminProfileType::class, $user);
+
+        $form = $this->createForm(AdminProfileType::class, $user, [
+            'adminLocales' => $this->getParameter('admin_locales')
+        ]);
         $form->handleRequest($request);  
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
 
+            $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('admin.profile');
             
         }
