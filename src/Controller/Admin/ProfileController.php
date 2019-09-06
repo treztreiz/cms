@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,12 +11,12 @@ use App\Entity\User;
 use App\Form\AdminProfileType;
 
 /**
- * @Route("/admin", options={ "i18n": false })
+ * @Route("/admin/profile")
  */
-class AdminProfileController  extends BaseAdminController
+class ProfileController  extends BaseAdminController
 {
     /**
-     * @Route("/profile", name="admin.profile", methods={"GET"})
+     * @Route("/", name="admin.profile", methods={"GET"})
      */
     public function profile(): Response
     {   
@@ -27,7 +27,7 @@ class AdminProfileController  extends BaseAdminController
     }
 
     /**
-     * @Route("/profile/edit", name="admin.profile.edit", methods={"GET","POST"})
+     * @Route("/edit", name="admin.profile.edit", methods={"GET","POST"})
      */
     public function edit(Request $request): Response
     {   

@@ -3,7 +3,7 @@ easy_admin:
     User:
 
       class: App\Entity\User
-      controller: App\Controller\UserController
+      controller: App\Controller\Admin\UserController
       role: ROLE_SUPER_ADMIN
       label: User
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use AlterPHP\EasyAdminExtensionBundle\Controller\EasyAdminController as BaseAdminController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,7 +11,7 @@ use App\Entity\Page;
 use App\Entity\Image;
 
 /**
- * @Route("/admin", options={ "i18n": false })
+ * @Route("/admin")
  */
 class AdminController extends BaseAdminController
 {   
