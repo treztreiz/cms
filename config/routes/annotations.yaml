@@ -5,5 +5,6 @@ controllers:
 admin_controllers:
     resource: ../../src/Controller/Admin/
     type: annotation
+    prefix: /admin
     options:
       i18n: false
