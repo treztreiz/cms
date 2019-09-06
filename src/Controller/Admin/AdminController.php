@@ -12,7 +12,7 @@ use App\Entity\Image;
 
 
 class AdminController extends BaseAdminController
-{   
+{      
     /**
      * @Route("/dashboard", name="admin.dashboard")
      */
@@ -79,7 +79,6 @@ class AdminController extends BaseAdminController
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository(Page::class)->findAll();
 
-        $response = [];
         $response[] = [ "value" => "none", "name" => "None" ];
 
         foreach($pages as $page){
@@ -92,5 +91,16 @@ class AdminController extends BaseAdminController
         return new JsonResponse($response);
     }
 
+    public function showPageAction()
+    {   
+        $id = $this->request->query->get('id');
+        $page = $this->em->getRepository(Page::class)->find($id);
+        
+        if( null == $page ) throw new NotFoundHttpException();
+        
+        return $this->redirectToRoute('page',[
+            'slug' => $page->getSlug()
+        ]);
+    }
     
 }
