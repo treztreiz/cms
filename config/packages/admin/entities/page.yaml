@@ -8,33 +8,37 @@ easy_admin:
       form:
         fields:
 
-          - { type: 'tab' , label: 'Content' }
-          - { type: 'group', columns: 8, label: 'Page content', icon: 'clone' }
+          - { type: 'tab' , label: page.content }
+          - { type: 'group', columns: 8, label: page.content, icon: 'clone' }
           - { property: 'translations', type: A2lix\TranslationFormBundle\Form\Type\TranslationsType,
               type_options: {
                 required: true,
                 fields: {
+                  title: { label: page.title },
+                  subtitle: { label: page.subtitle },
                   storage: { field_type: App\Form\EditorStorageType, required: false }
                 },
                 excluded_fields: [ html, slug ]
               } 
             }
           - { property: css, css_class: 'editor-css' }
-          - { type: 'group', columns: 4, label: 'Banner', icon: 'image' }
-          - { property: image, type: App\Form\ImageType }
+          - { type: 'group', columns: 4, label: page.banner, icon: 'image' }
+          - { property: image, label: page.image, type: App\Form\ImageType }
 
-          - { type: 'tab' , label: 'Configuration' }
-          - { type: 'group', columns: 8, label: 'Seo', icon: 'clone' }
-          - { property: seo, type: App\Form\SeoType }
-          - { type: 'group', columns: 4, label: 'Options', icon: 'cog' }
-          - frontpage
+          - { type: 'tab' , label: page.config}
+          - { type: 'group', columns: 8, label: page.seo, icon: 'clone' }
+          - { property: seo, type: App\Form\SeoType, label: page.Seo }
+          - { type: 'group', columns: 4, label: page.options, icon: 'cog' }
+          - { property: 'frontpage' , label: page.frontpage }
 
       list:
         title: '<i class="fa fa-fw fa-clone"></i>  Pages'
         fields: 
-          - { property: translate.title, label: Title }
-          - { property: image.imageName, type: 'image', label: 'Banner', base_path: '%app_path.images%' }
-          - { property: seo.indexed, type: toggle, label: 'Indexed' }
-          - { property: frontpage, type: 'boolean' }
-          - { property: author.modifiedAt, label: 'Modified', type: 'date', format: 'd/m/Y' }
-          - { property: author.modifiedBy, label: 'By' }
+          - { property: translate.title, label: page.title }
+          - { property: image.imageName, type: 'image', label: page.banner, base_path: '%app_path.images%' }
+          - { property: seo.indexed, type: toggle, label: page.indexed }
+          - { property: frontpage, type: 'boolean', label: page.frontpage }
+          - { property: author.modifiedAt, label: page.modified, type: 'date', format: 'd/m/Y' }
+          - { property: author.modifiedBy, label: page.by }
+        actions: 
+          - { name: 'show' }

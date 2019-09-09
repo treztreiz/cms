@@ -1,0 +1,61 @@
+# GENERAL
+
+hello: Bonjour
+
+# ROLES
+
+ROLE_ADMIN: Admin
+ROLE_SUPER_ADMIN: Super admin
+ROLE_CUSTOMER: Client
+
+# MENU
+
+menu:
+  users: Utilisateurs
+  pages: Pages
+  dashboard: Tableau de bord
+  profile: Profil
+
+# ACTIONS
+
+action:
+  save: Sauvegarder
+  edit: Modifier
+  edit_profil: Modifier votre profil
+  edit_content: Modifier le contenu
+  new: Créer
+  delete: Supprimer
+  show: Voir
+  back: Retourner au profil   
+
+# ENTITIES
+
+user:
+  label: Utilisateur
+  email: Email
+  username: Pseudo
+  firstname: Nom
+  lastname: Prénom
+  role: Rôle
+  avatar: Avatar
+  password: Mot de passe
+  locale: Langue
+
+page:
+  title: Titre
+  banner: Bannière
+  indexed: Indexé
+  frontpage: Page d'accueil
+  modified: Modifié
+  by: Par
+  content: Contenu de la page
+  subtitle: Sous-titre
+  config: Configuration
+  image: Image
+  seo: Seo
+  options: Options
+
+seo:
+  og_title: Og Titre
+  og_description: Og Description
+

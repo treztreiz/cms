@@ -1,35 +1,28 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use App\Entity\Page;
 use App\Entity\Image;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 /**
- * @Route("/admin", options={ "i18n": false })
+ * @Route("/editor")
  */
-class AdminController extends BaseAdminController
-{   
-    /**
-     * @Route("/dashboard", name="admin.dashboard")
-     */
-    public function dashboard()
-    {
-        return $this->render('admin/dashboard.html.twig');
-    }
-
+class EditorController extends AbstractController
+{      
     /**
      * @Route("/asset/upload", name="admin.asset_upload", options={ "expose": true })
      */
-    public function assetUpload(Request $request)
+    public function assetUpload(Request $request, ValidatorInterface $validator, UploaderHelper $helper)
     {   
         $em = $this->getDoctrine()->getManager();
-        $validator = $this->get('validator');
 
         $assets = [];
         $errors = [];
@@ -67,7 +60,7 @@ class AdminController extends BaseAdminController
 
         $response = [ "assets" => [], "errors" => $errors ];
         foreach($assets as $asset){
-            $response["assets"][] = $this->get('vich_uploader.templating.helper.uploader_helper')->asset($asset, 'imageFile');
+            $response["assets"][] = $helper->asset($asset, 'imageFile');
         }
 
         return new JsonResponse($response);
@@ -81,9 +74,7 @@ class AdminController extends BaseAdminController
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository(Page::class)->findAll();
 
-        $response = [];
         $response[] = [ "value" => "none", "name" => "None" ];
-
         foreach($pages as $page){
             $response[] = [ 
                 "value" => "{{path('page.by_id',{ id : " . $page->getId() . ", slug : '" . $page->getSlug() . "' })}}",
@@ -93,4 +84,5 @@ class AdminController extends BaseAdminController
 
         return new JsonResponse($response);
     }
+    
 }

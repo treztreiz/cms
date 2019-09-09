@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,14 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\AdminProfileType;
 
-
 /**
- * @Route("/admin")
+ * @Route("/profile")
  */
-class AdminProfileController  extends BaseAdminController
+class ProfileController extends AdminController
 {
     /**
-     * @Route("/profile", name="admin.profile", methods={"GET"})
+     * @Route("/", name="admin.profile", methods={"GET"})
      */
     public function profile(): Response
     {   
@@ -28,18 +26,27 @@ class AdminProfileController  extends BaseAdminController
     }
 
     /**
-     * @Route("/profile/edit", name="admin.profile.edit", methods={"GET","POST"})
+     * @Route("/edit", name="admin.profile.edit", methods={"GET","POST"})
      */
     public function edit(Request $request): Response
     {   
         $user = $this->getUser();
-        $form = $this->createForm(AdminProfileType::class, $user);
-        $form->handleRequest($request);
 
+        $form = $this->createForm(AdminProfileType::class, $user, [
+            'adminLocales' => $this->getParameter('admin_locales')
+        ]);
+        $form->handleRequest($request);  
         if ($form->isSubmitted() && $form->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
 
+            //Update session to automatically switch admin locale
+            if (null !== $user->getLocale()) {
+                $request->getSession()->set('_locale', $user->getLocale());
+            }
+
             return $this->redirectToRoute('admin.profile');
+            
         }
 
         return $this->render('admin/profile/edit.html.twig', [

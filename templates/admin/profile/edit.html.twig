@@ -1,11 +1,65 @@
 {% extends '@EasyAdmin/page/content.html.twig' %}
 
 {% block main %}
-    <h1>Edit User</h1>
 
+	{% form_theme form 'form/form.html.twig' %}
+
+    <h1>{{'action.edit_profil'|trans}}</h1>
+
+<div class="custom-form">
     {{ form_start(form) }}
-	{{ form_widget(form) }}
-	    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-6">
+
+                <div class="form-group field-text" for="admin profile locale">
+                    <label class="form-contol-label">{{ form_label(form.username, 'user.username'|trans  )}}</label>
+                        <div class="form-widget">{{ form_widget(form.username) }}</div>    
+                </div>
+                
+                <div class="form-group field-text" for="admin profile locale">
+                    <label class="form-contol-label">{{ form_label(form.email, 'user.email'|trans )}}</label>
+                        <div class="form-widget">{{ form_widget(form.email) }}</div>    
+                </div>
+
+                <div class="form-group field-text" for="admin profile locale">
+                    <label class="form-contol-label">{{ form_label(form.firstname, 'user.firstname'|trans )}}</label>
+                        <div class="form-widget">{{ form_widget(form.firstname) }}</div>    
+                </div>
+
+                <div class="form-group field-text" for="admin profile locale">
+                    <label class="form-contol-label">{{ form_label(form.lastname, 'user.lastname'|trans )}}</label>
+                        <div class="form-widget">{{ form_widget(form.lastname) }}</div>    
+                </div>
+
+                <div class="form-group field-text" for="admin profile locale">
+                    <label class="form-contol-label">
+                        {{ form_label(form.locale, 'user.locale'|trans )}}
+                    </label>
+                        <div class="form-widget">
+                                {{ form_widget(form.locale) }}
+                        </div>    
+                </div>
+
+
+               {#  {{ form_row(form.locale) }} #}
+
+    		</div>
+    		<div class="col-6">
+
+    			{{ form_row(form.image) }}
+
+    		</div>
+    	</div>
+    </div>
+
+<div class="form-actions">
+
+		<button class="btn btn-primary"><i class="fas fa-check"></i> {{'action.save'|trans}}</button>
+
+		<a href="{{path('admin.profile')}}">{{'action.back'|trans}}</a>
+</div>
 	{{ form_end(form) }}
+</div>
 
 {% endblock %}

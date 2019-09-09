@@ -9,7 +9,9 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User implements UserInterface
-{
+{   
+    use Traits\TraitImage;
+    
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -38,6 +40,21 @@ class User implements UserInterface
      */
     private $username;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastname;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $locale = 'en';
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,7 +77,7 @@ class User implements UserInterface
      *
      * @see UserInterface
      */
-    public function getUsername(): string
+    public function getUsername(): ?string
     {
         return $this->username;
     }
@@ -68,6 +85,30 @@ class User implements UserInterface
     public function setUserName(string $username): self
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(?string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(?string $lastname): self
+    {
+        $this->lastname = $lastname;
 
         return $this;
     }
@@ -89,6 +130,18 @@ class User implements UserInterface
         $this->roles = $roles;
 
         return $this;
+    }
+
+    public function setRole(?string $role)
+    {   
+        $this->setRoles([$role]);
+
+        return $this;
+    }
+
+    public function getRole()
+    {
+        return $this->getRoles()[0];
     }
 
     /**
@@ -126,5 +179,17 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->username;
+    }
+
+
+    public function getLocale(): ?string
+    {
+        return $this->locale;
+    }
+
+    public function setLocale(string $locale): self
+    {
+        $this->locale = $locale;
+        return $this;
     }
 }

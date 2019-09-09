@@ -13,9 +13,15 @@ class SeoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('translations', TranslationsType::class)
+            ->add('translations', TranslationsType::class, [ 
+                'fields' => [
+                    'ogTitle' => [ 'label' => 'seo.og_title' ],
+                    'ogDescription' => [ 'label' => 'seo.og_description']
+                ]
+            ])
             ->add('indexed', null, [
-                "required" => false
+                "required" => false,
+                "label" => 'page.indexed'
             ])
         ;
     }

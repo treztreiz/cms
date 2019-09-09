@@ -2,6 +2,9 @@ easy_admin:
 
   site_name: '%site_name%'
 
+  user:
+      avatar_property_path: 'image'
+
   list:
     batch_actions: ['delete']
 
@@ -11,5 +14,6 @@ easy_admin:
 
     menu:
       - { label: 'General' }
-      - { label: Dashboard, icon: tasks, route: admin.dashboard, default: true }
-      - { entity: Page, label: Pages, icon: clone }
+      - { label: menu.dashboard, icon: tasks, route: admin.dashboard, default: true }
+      - { entity: Page, label: menu.pages, icon: clone }
+      - { entity: User, label: menu.users, icon: user }

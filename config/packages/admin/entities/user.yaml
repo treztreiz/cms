@@ -1,0 +1,28 @@
+easy_admin:
+  entities:
+    User:
+
+      class: App\Entity\User
+      controller: App\Controller\Admin\UserController
+      label: User
+      role: 'ROLE_SUPER_ADMIN'
+
+      form:
+        fields:
+          - { property: 'email', label: user.email }
+          - { property: 'firstname', label: user.firstname }
+          - { property: 'lastname', label: user.lastname }
+          - { property: 'username', label: user.username }
+          - { property: 'password', type: password, label: user.password }
+          - { property: image, type: App\Form\ImageType, label: user.avatar }
+          - { property: 'role', label: user.role, type: App\Form\RoleType, type_options: { required: true, roles : '%security.role_hierarchy.roles%' } }
+
+      list:
+        title: menu.users
+        fields:
+          - { property: 'email', label: user.email }
+          - { property: 'username', label: user.username }
+          - { property: 'firstname', label: user.firstname }
+          - { property: 'lastname', label: user.lastname }
+          - { property: 'role', label: user.role }
+          - { property: 'image.imageName', label: user.avatar, type: 'image', base_path: '%app_path.images%' }
