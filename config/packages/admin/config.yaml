@@ -14,6 +14,6 @@ easy_admin:
 
     menu:
       - { label: 'General' }
-      - { label: Dashboard, icon: tasks, route: admin.dashboard, default: true }
-      - { entity: Page, label: Pages, icon: clone }
-      - { entity: User, label: Users, icon: user }
+      - { label: menu.dashboard, icon: tasks, route: admin.dashboard, default: true }
+      - { entity: Page, label: menu.pages, icon: clone }
+      - { entity: User, label: menu.users, icon: user }

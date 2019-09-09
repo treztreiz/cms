@@ -8,20 +8,20 @@ easy_admin:
 
       form:
         fields:
-          - 'email'
-          - 'firstname'
-          - 'lastname'
-          - 'username'
-          - { property: 'password', type: password }
-          - { property: image, type: App\Form\ImageType }
-          - { property: 'role', type: App\Form\RoleType, type_options: { required: true, roles : '%security.role_hierarchy.roles%' } }
+          - { property: 'email', label: user.email }
+          - { property: 'firstname', label: user.firstname }
+          - { property: 'lastname', label: user.lastname }
+          - { property: 'username', label: user.username }
+          - { property: 'password', type: password, label: user.password }
+          - { property: image, type: App\Form\ImageType, label: user.avatar }
+          - { property: 'role', label: user.role, type: App\Form\RoleType, type_options: { required: true, roles : '%security.role_hierarchy.roles%' } }
 
       list:
-        title: '<i class="fa fa-fw fa-user"></i>  Users'
+        title: menu.users
         fields:
-          - { property: 'email', label: 'Email' }
-          - { property: 'username', label: 'Username' }
-          - { property: 'firstname', label: 'Firstname' }
-          - { property: 'lastname', label: 'Lastname' }
-          - { property: 'role', label: 'Role' }
-          - { property: 'image.imageName', label: 'Avatar', type: 'image', base_path: '%app_path.images%' }
+          - { property: 'email', label: user.email }
+          - { property: 'username', label: user.username }
+          - { property: 'firstname', label: user.firstname }
+          - { property: 'lastname', label: user.lastname }
+          - { property: 'role', label: user.role }
+          - { property: 'image.imageName', label: user.avatar, type: 'image', base_path: '%app_path.images%' }

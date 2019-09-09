@@ -1,3 +1,63 @@
+# GENERAL
+
+hello: Hello
+
+# ROLES
+
 ROLE_ADMIN: Admin
-ROLE_SUPER_ADMIN: 'Super admin'
-ROLE_CUSTOMER: Customer
+ROLE_SUPER_ADMIN: Super admin
+ROLE_CUSTOMER: Client
+
+# MENU
+
+menu:
+  users: Users
+  pages: Pages
+  dashboard: Dashboard
+  profile: Profile
+
+# ACTIONS
+
+action:
+  save: Save
+  edit: Edit
+  edit_profil: Edit profile
+  edit_content: Edit content
+  new: Create
+  delete: Delete
+  show: Show
+  back: Back to profile  
+
+# ENTITIES
+
+user:
+  label: User
+  email: Email
+  username: Username
+  firstname: Firstname
+  lastname: Lastname
+  role: Role
+  avatar: Avatar
+  password: Password
+  locale: Locale
+
+page:
+  title: Title
+  banner: Banner
+  indexed: Indexed
+  frontpage: Frontpage
+  modified: Modified
+  by: By
+  content: Page content
+  subtitle: Subtitle
+  config: Configuration
+  image: Image
+  seo: Seo
+  options: Options
+
+# SEO
+
+seo:
+  og_title: Og Title
+  og_description: Og Description
+
