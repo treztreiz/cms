@@ -5,6 +5,7 @@ easy_admin:
       class: App\Entity\User
       controller: App\Controller\Admin\UserController
       label: User
+      role: 'ROLE_SUPER_ADMIN'
 
       form:
         fields:
